@@ -38,6 +38,17 @@ public class StringQs {
         return sb.reverse().toString().equals(str);
     }
 
+    public static int countVowels(String str) {
+        int count = 0;
+        String vowels = "aeiouAEIOU";
+        for (char c : str.toCharArray()) {
+            if (vowels.indexOf(c) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
         String str = "hello";
@@ -57,6 +68,10 @@ public class StringQs {
         String str3 = "madam";
         System.out.println("Is madam a palindrome ??");
         System.out.println(isPalindrome(str3));
-        
+
+        String str4 = "Google";
+        System.out.println("How many vowels are there in the word Google ??");
+        System.out.println(countVowels(str4));
+
     }
 }
