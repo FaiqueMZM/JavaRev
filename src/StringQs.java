@@ -54,6 +54,17 @@ public class StringQs {
         return count;
     }
 
+    //count occurrence of a character in a string
+    public static int countOccurrence(String str, char c) {
+        int count = 0;
+        for (char ch : str.toCharArray()) {
+            if (ch == c) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
         String str = "hello";
@@ -77,6 +88,9 @@ public class StringQs {
         String str4 = "Google";
         System.out.println("How many vowels are there in the word Google ??");
         System.out.println(countVowels(str4));
+        System.out.println();
 
+        System.out.println("How many occurrences of 'o' are there in the word " + str4 + " ??");
+        System.out.println(countOccurrence(str4, 'o'));
     }
 }
