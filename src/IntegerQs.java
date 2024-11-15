@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class IntegerQs {
 
+    //find the largest number in an integer array using Arrays method
     public static int findLargestNumber1(int[] arr) {
         Arrays.sort(arr);
 
@@ -9,10 +10,11 @@ public class IntegerQs {
         return largest;
     }
 
+    //find the largest number in an array using for loop while comparing the numbers
     public static int findLargestNumber2(int[] arr) {
         int largest = arr[0];
 
-        for (int num : arr) {
+        for (int num : arr) {       //for each loop to go through each element to compare with the largest
             if (num > largest) {
                 largest = num;
             }
@@ -20,23 +22,47 @@ public class IntegerQs {
         return largest;
     }
 
+    //sum of the digits in a number
     public static int sumOfDigits(int n) {
         int sum = 0;
         while (n != 0) {
-            sum += n % 10;
-            n /= 10;
+            sum += n % 10;      //n is divided by 10 and reminder will be added to the sum
+            n /= 10;            //removes the last digit of n
         }
         return sum;
     }
 
+    //reverse the integer
     public static int reverseInteger(int n) {
         int reverse = 0;
         while (n != 0) {
-            int digit = n % 10;
-            reverse = reverse * 10 + digit;
-            n /= 10;
+            int digit = n % 10;                 //get the last digit of n
+            reverse = reverse * 10 + digit;     //add it to the reverse int
+            n /= 10;                            //remove the last digit of n
         }
         return reverse;
+    }
+
+    //check for prime number
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //calculate factorial of a number
+    public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
     }
 
     public static void main(String[] args) {
@@ -48,11 +74,19 @@ public class IntegerQs {
         System.out.println("Largest number in the array is " + findLargestNumber2(numArr));
         System.out.println();
 
-        int num = 1234567;
+        int num = 1234;
         System.out.println("Sum of the digits of " + num + " is " + sumOfDigits(num));
         System.out.println();
 
         System.out.println("Reversed number of " + num + " is " + reverseInteger(num));
         System.out.println();
+
+        int prime = 29;
+        System.out.println("Is " + prime + " is a prime number ??");
+        System.out.println(isPrime(prime));
+        System.out.println();
+
+        int num1 = 5;
+        System.out.println("Factorial of " + num1 + " is " + factorial(num1));
     }
 }
