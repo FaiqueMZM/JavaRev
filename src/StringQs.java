@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class StringQs {
 
@@ -65,6 +66,20 @@ public class StringQs {
         return count;
     }
 
+    //remove duplicate character in the given string
+    public static String removeDuplicates(String str) {
+        HashSet<Character> set = new HashSet<>();
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : str.toCharArray()) {
+            if (!set.contains(c)) {
+                sb.append(c);
+                set.add(c);
+            }
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
 
         String str = "hello";
@@ -92,5 +107,10 @@ public class StringQs {
 
         System.out.println("How many occurrences of 'o' are there in the word " + str4 + " ??");
         System.out.println(countOccurrence(str4, 'o'));
+        System.out.println();
+
+        String str5 = "monopolis";
+        System.out.println("Remove duplicate character from the word " + str5 + " ==> " + removeDuplicates(str5));
+
     }
 }
