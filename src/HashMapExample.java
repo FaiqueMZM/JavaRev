@@ -3,25 +3,26 @@ import java.util.HashMap;
 public class HashMapExample {
     public static void main(String[] args) {
 
-        HashMap<String, Integer> fruit = new HashMap<>();   //hashmap for fruit items (name, price)
+        HashMap<String, Integer> fruits = new HashMap<>();   //hashmap for fruit items (name, price)
 
-        fruit.put("apple", 100);        //insert elements to hashmap
-        fruit.put("orange", 120);
-        fruit.put("pineapple", 350);
-        fruit.put("mango", 150);
+        fruits.put("apple", 100);        //insert elements to hashmap
+        fruits.put("orange", 120);
+        fruits.put("pineapple", 350);
+        fruits.put("mango", 150);
 
-        System.out.println("Price of apple: " + fruit.get("apple"));
+        System.out.println("Price of apple: " + fruits.get("apple"));
         System.out.println();
 
-        for (String key : fruit.keySet()) {
-            System.out.println(key + ": " + fruit.get(key));
+        for (String key : fruits.keySet()) {
+            System.out.println(key + ": " + fruits.get(key));
         }
 
-        System.out.println(fruit);
-        fruit.remove("apple");
-        System.out.println(fruit);
+        System.out.println();
+        System.out.println("Fruits hashmap has : " + fruits);
+        fruits.remove("apple");
+        System.out.println("Fruits hashmap after removing 'apple' : " + fruits);
 
-        fruit.clear();
-        System.out.println(fruit);
+        fruits.clear();
+        System.out.println("Fruits hashmap after clearing everything : " + fruits);
     }
 }
