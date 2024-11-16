@@ -21,6 +21,8 @@ public class LinkedListExample {
 
         System.out.println();
         System.out.println("Elements of fruits linkedlist is : " + fruits.toString());
+        fruits.remove("Banana");
+        System.out.println("Elements of fruits linkedlist after removing banana is : " + fruits.toString());
 
         //addFirst()
         //addLast()
