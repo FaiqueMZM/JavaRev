@@ -75,6 +75,16 @@ public class IntegerQs {
         return count;
     }
 
+    //convert a decimal to binary
+    public static String decimalToBinary(int n) {
+        StringBuilder sb = new StringBuilder(n);
+        while (n > 0) {
+            sb.insert(0, n % 2);
+            n /= 2;
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
 
         int[] numArr = {7,2,8,4,6,2,1};
@@ -102,5 +112,9 @@ public class IntegerQs {
 
         int num2 = 12345;
         System.out.println("Count of digits of " + num2 + " is " + countDigits(num2));
+        System.out.println();
+
+        int num3 = 5;
+        System.out.println("Conversion of  " + num3 + " to binary is => " + decimalToBinary(num3));
     }
 }
