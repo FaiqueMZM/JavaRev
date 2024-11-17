@@ -65,6 +65,16 @@ public class IntegerQs {
         return fact;
     }
 
+    //count digits in a number
+    public static int countDigits(int n) {
+        int count = 0;
+        while (n != 0) {
+            n /= 10;
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
         int[] numArr = {7,2,8,4,6,2,1};
@@ -88,5 +98,9 @@ public class IntegerQs {
 
         int num1 = 5;
         System.out.println("Factorial of " + num1 + " is " + factorial(num1));
+        System.out.println();
+
+        int num2 = 12345;
+        System.out.println("Count of digits of " + num2 + " is " + countDigits(num2));
     }
 }
