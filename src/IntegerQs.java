@@ -85,6 +85,18 @@ public class IntegerQs {
         return sb.toString();
     }
 
+    //convert a binary to decimal
+    public static int binaryToDecimal(String binary) {
+        int decimal = 0, base = 1;
+        for (int i = binary.length() - 1; i >= 0; i--) {
+            if (binary.charAt(i) == '1') {
+                decimal += base;
+            }
+            base *= 2;
+        }
+        return decimal;
+    }
+
     public static void main(String[] args) {
 
         int[] numArr = {7,2,8,4,6,2,1};
@@ -116,5 +128,10 @@ public class IntegerQs {
 
         int num3 = 5;
         System.out.println("Conversion of  " + num3 + " to binary is => " + decimalToBinary(num3));
+        System.out.println();
+
+        String binary = "101";
+        System.out.println("Conversion of  " + binary + " to decimal is => " + binaryToDecimal(binary));
+        System.out.println();
     }
 }
